@@ -1,0 +1,304 @@
+.section {
+    padding: var(--section-padding) 0;
+    background: var(--gray-100);
+}
+
+.inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Panel */
+.panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    margin-top: 4px;
+    margin-bottom: 20px;
+}
+
+/* City list */
+.cityList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cityBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border-radius: var(--radius-md);
+    background: white;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+}
+
+.cityBtn:hover:not(:disabled) {
+    border-color: var(--primary);
+    background: rgba(66, 132, 158, 0.05);
+    transform: translateX(3px);
+}
+
+.cityBtn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.cityBtn.active .cityBtnName {
+    color: white;
+}
+
+.cityBtn.active .cityBtnArrow {
+    color: white;
+}
+
+.cityBtn.comingSoon {
+    opacity: 0.6;
+    cursor: default;
+    background: var(--gray-100);
+}
+
+.cityBtnLeft {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cityBtnIcon {
+    font-size: 1.3rem;
+    width: 36px;
+    height: 36px;
+    background: var(--gray-100);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cityBtn.active .cityBtnIcon {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.cityBtnName {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--dark);
+    display: block;
+}
+
+.comingSoonLabel {
+    font-size: 0.7rem;
+    color: var(--gray-400);
+    font-weight: 500;
+}
+
+.cityBtnArrow {
+    color: var(--primary);
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.cityBtn:hover .cityBtnArrow {
+    transform: translateX(3px);
+}
+
+/* Map */
+.mapWrap {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background: white;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mapContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #f8fafc;
+    overflow: hidden;
+}
+
+.moroccoSvg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.svg {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+}
+
+/* Markers */
+.marker {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transform: translate(-50%, -100%);
+    z-index: 5;
+    transition: transform 0.2s ease;
+}
+
+.marker:hover {
+    transform: translate(-50%, -105%) scale(1.1);
+    z-index: 10;
+}
+
+.markerActive {
+    z-index: 10;
+}
+
+.markerDisabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.markerDot {
+    width: 18px;
+    height: 18px;
+    background: var(--primary);
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.markerActive .markerDot {
+    animation: pulse-ring 2s infinite;
+}
+
+.markerInner {
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+}
+
+.markerLabel {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--dark);
+    background: white;
+    padding: 2px 8px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.markerActive .markerLabel {
+    background: var(--primary);
+    color: white;
+}
+
+/* Popup card */
+.popup {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 260px;
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    z-index: 20;
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.popupImage {
+    position: relative;
+    height: 130px;
+}
+
+.popupImg {
+    object-fit: cover;
+}
+
+.popupBody {
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.popupName {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.popupTagline {
+    font-size: 0.8rem;
+    color: var(--gray-600);
+    line-height: 1.4;
+}
+
+.popupMeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.popupRating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: var(--dark);
+}
+
+.popupCount {
+    font-size: 0.75rem;
+    color: var(--gray-600);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .inner {
+        grid-template-columns: 1fr;
+    }
+
+    .mapWrap {
+        aspect-ratio: 16 / 10;
+    }
+
+    .popup {
+        display: none;
+    }
+}

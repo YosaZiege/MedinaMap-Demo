@@ -1,0 +1,494 @@
+/* ===== HERO ===== */
+.hero {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.heroBg {
+    position: absolute;
+    inset: 0;
+}
+
+.heroBgImg {
+    object-fit: cover;
+    object-position: center 40%;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.15) 0%,
+            rgba(0, 0, 0, 0.75) 100%);
+}
+
+.backBtn {
+    position: absolute;
+    top: calc(var(--nav-height) + 20px);
+    left: 24px;
+    z-index: 3;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    transition: background 0.2s;
+}
+
+.backBtn:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.priceCard {
+    position: absolute;
+    bottom: 24px;
+    right: 32px;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    text-align: center;
+    min-width: 200px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.priceCardLabel {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    font-family: var(--font-heading);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.priceCardValue {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--primary);
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.durationBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 600;
+    backdrop-filter: blur(6px);
+    width: fit-content;
+}
+
+.heroTitle {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: white;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+}
+
+.heroTagline {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 480px;
+    line-height: 1.5;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main {
+    padding: 64px 0 80px;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 48px;
+    align-items: start;
+}
+
+/* ===== CONTENT AREA ===== */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.contentBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contentTitle {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark);
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--gray-100);
+}
+
+.overviewText {
+    font-size: 1rem;
+    color: var(--gray-600);
+    line-height: 1.85;
+}
+
+/* ===== INCLUSIONS ===== */
+.inclusionsList {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.inclusion {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--dark-3);
+    line-height: 1.4;
+    padding: 10px 12px;
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
+}
+
+.inclusionIcon {
+    color: var(--success);
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* ===== ITINERARY ===== */
+.itinerary {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-left: 2px solid var(--gray-200);
+    margin-left: 12px;
+    padding-left: 0;
+}
+
+.itineraryItem {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 32px;
+    position: relative;
+}
+
+.itineraryItem:last-child {
+    padding-bottom: 0;
+}
+
+.itineraryNumber {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-left: -21px;
+    box-shadow: var(--shadow-blue);
+    position: relative;
+    z-index: 1;
+}
+
+.itineraryContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 8px;
+    flex: 1;
+}
+
+.itineraryTitle {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.itineraryDesc {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+}
+
+/* ===== INFO BLOCK ===== */
+.infoBlock {
+    background: rgba(26, 86, 219, 0.04);
+    border: 1px solid rgba(26, 86, 219, 0.12);
+    border-radius: var(--radius-md);
+    padding: 28px;
+}
+
+.infoList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.infoItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--dark-3);
+    line-height: 1.4;
+}
+
+.infoDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary);
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    position: sticky;
+    top: calc(var(--nav-height) + 24px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sideCard {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.sideCardTitle {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 16px;
+}
+
+.quickFacts {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.factItem {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.factItem:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.factIcon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(26, 86, 219, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.factLabel {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    font-family: var(--font-heading);
+    margin-bottom: 2px;
+}
+
+.factValue {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+/* Booking card */
+.bookCard {
+    background: var(--dark);
+    border-color: transparent;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.bookFrom {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 600;
+    font-family: var(--font-heading);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.bookPrice {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.bookDuration {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 4px;
+}
+
+.bookBtn {
+    width: 100%;
+    justify-content: center;
+}
+
+.bookNote {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.5;
+    text-align: center;
+}
+
+.helpText {
+    font-size: 0.88rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+}
+
+/* ===== MORE PACKAGES ===== */
+.moreSection {
+    background: var(--sand);
+}
+
+.moreSectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 36px;
+}
+
+.moreDesc {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    margin-top: 6px;
+}
+
+.viewAll {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary);
+    transition: gap 0.2s;
+}
+
+.viewAll:hover {
+    gap: 8px;
+}
+
+.moreGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .mainGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+        /* reorder sidebar above content on mobile */
+        order: -1;
+    }
+
+    .inclusionsList {
+        grid-template-columns: 1fr;
+    }
+
+    .priceCard {
+        right: 16px;
+        bottom: 16px;
+        min-width: 160px;
+    }
+
+    .moreGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .moreSectionHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .priceCard {
+        display: none;
+    }
+}
